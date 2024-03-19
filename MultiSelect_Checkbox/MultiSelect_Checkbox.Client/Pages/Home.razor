@@ -1,0 +1,33 @@
+﻿@page "/"
+
+<SfMultiSelect TValue="string[]" TItem="Vegetables" Placeholder="Select a vegetable"
+               DataSource="@VegetablesList" Mode="VisualMode.CheckBox"
+               ShowSelectAll=true SelectAllText="Select All Vegetables" UnSelectAllText="unSelect All"
+               MaximumSelectionLength=2 EnableSelectionOrder="false" EnableGroupCheckBox="true">
+    <MultiSelectFieldSettings GroupBy="Category" Value="Vegetable"></MultiSelectFieldSettings>
+</SfMultiSelect>
+
+@code {
+
+    public class Vegetables
+    {
+        public string? Vegetable { get; set; }
+        public string? Category { get; set; }
+    }
+
+    List<Vegetables> VegetablesList = new List<Vegetables>()
+    {
+        new Vegetables() { Vegetable = "Cabbage", Category = "Leafy and Salad" },
+        new Vegetables() { Vegetable = "Chickpea", Category = "Beans" },
+        new Vegetables() { Vegetable = "Garlic", Category = "Bulb and Stem" },
+        new Vegetables() { Vegetable = "Green bean", Category = "Beans" },
+        new Vegetables() { Vegetable = "Horse gram", Category = "Beans" },
+        new Vegetables() { Vegetable = "Nopal", Category = "Bulb and Stem" },
+        new Vegetables() { Vegetable = "Onion", Category = "Bulb and Stem" },
+        new Vegetables() { Vegetable = "Pumpkins", Category = "Leafy and Salad" },
+        new Vegetables() { Vegetable = "Spinach", Category = "Leafy and Salad" },
+        new Vegetables() { Vegetable = "Wheat grass", Category = "Leafy and Salad" },
+        new Vegetables() { Vegetable = "Yarrow", Category = "Leafy and Salad" }
+    };
+}
+
